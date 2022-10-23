@@ -1,0 +1,260 @@
+/*
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    AKAI Frontend Task - CSS
+
+    Spróbuj zmodyfikować poniższy plik ze stylami tak, by upiększyć formularz na stronie.
+    Jako inspiracji możesz skorzystać z szablonu znajdującego się w pliku img/layout.png
+    Nie wymagamy, by wykonać identyczny layout. Liczy się kreatywność.
+
+    Przy wykonywaniu zadania można zmienić strukturę pliku index.html.
+    Pamiętaj, że w takim wypadku będzie trzeba zadbać o dostosowanie odpowiednich selektorów.
+
+    Jeśli korzystasz z preprocessorów takich jak Sass/Less, również możesz się tym pochwalić.
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+
+/*
+Przeanalizuj składnię pliku .css.
+Przy stylowaniu na najpierw podajemy, co chcemy ostylować, a następnie jakie atrybuty chcemy zmienić.
+np. poniższy selektor (body) oznacza, że modyfikujemy kontent body w dokumencie html.
+Żeby mieć pewność o czym mowa, zajrzyj w plik index.html, i znajdź tag <body>.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,700&display=swap');
+
+
+
+body {
+  /* font-family: "Comic Sans MS", "Comic Sans", cursive; */
+  font-family: Roboto Serif, sans-serif;;
+  align-items: center;
+  background-color: #2F4455;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+
+#task-frontend {
+  
+  background-color: #2E151B;
+  border-radius: 50px;
+  box-sizing: border-box;
+  padding: 20px;
+  height: auto;
+  width: 450px;
+
+
+}
+
+#img{
+  display: flex;
+  justify-content: center;
+}
+img{
+  width: 20%;
+}
+
+
+#task-frontend .basic-title {
+  color: #49C5B6;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+#task-frontend .subtitle {
+  color: #49C5B6;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+#task-frontend .form-line {
+  border: 0.1px  solid #35706E ;
+  
+}
+
+
+/*
+znasz już sposób definiowania selektorów.
+Oczywiście nie przerobiliśmy jeszcze wszystkich. W związku z tym zachęcam Cię do zapoznania się z innymi selektorami, np. tutaj:
+https://www.w3schools.com/cssref/css_selectors.asp
+Chciałbym, byś przeanalizowała / przeanalizował poniższe style i zmodyfikować je według własnego uznania.
+*/
+.checkbox-container label{
+  color: #49C5B6;
+  font-size: 0.95em;
+  font-family: Roboto Serif;
+}
+#task-frontend form>label {
+  font-size: 1.2em;  
+  color: #49C5B6;
+}
+
+#task-frontend input[type="text"], #task-frontend input[type="email"] {
+ 
+  background-color: #1B3333;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #35706E;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+
+#task-frontend span {
+  display: block;
+}
+
+.checkbox-container{
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: auto auto;
+  align-items: center;
+  grid-row-gap: 10px;
+  margin-top: 5px
+}
+
+.checkbox-container label{
+  cursor: pointer;
+  display: flex;
+}
+.checkbox-container input[type="checkbox"] {
+	text-transform: none;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+
+}
+
+.checkbox-container label::before {
+  content: '';
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 15em;
+    margin-right: .5em;
+    border: .05em solid #376F70;
+}
+
+.checkbox-container label:hover::before,
+.checkbox-container input[type='checkbox']:hover + label::before {
+    background-color: #35706E;
+}
+
+.checkbox-container input[type='checkbox']:focus + label::before {
+  box-shadow: 0 0 20px black;
+}
+
+.checkbox-container input[type='checkbox']:checked + label::before {
+  content: '\2713 ';
+    background-color: #27AE60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+#frontend-checkbox {
+  background-color: #0088DD;
+}
+
+#inputDiv{
+  display: flex;
+  justify-content: center;    
+}
+
+/* ////////////////////// */
+
+#submit{
+  font-family:Roboto Serif ;
+  color: #1B3333;
+  background-color: #356f7067;
+  border-radius: 20px  ;
+  border: #356F70;
+  font-size: 1.2em;
+  padding: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+#submit:enabled{
+  color: #49C5B6;
+  border: #356f7000;
+  background-color: #356F70;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px #49c5b75a;
+
+
+}
+#submit:enabled:hover{
+  background-color: #27AE60;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transform: translateY(-7px);
+}
+
+
+
+#task-frontend {
+  transform:
+    perspective(750px)
+    translate3d(0px, 0px, -250px)
+    rotateX(27deg)
+    scale(0.9, 0.9);
+  border-radius: 20px;
+  border: 5px solid #35706E;
+  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in-out transform;
+  cursor: pointer;
+}
+
+/* #task-frontend:hover {
+  transform: translate3d(0px, 0px, -250px);
+} */
+
+/* //////////// */
+
+
+
+/* ///////////////////////////////////// */
+.error{
+  color: #D97B93;
+  font-family: serif;
+  font-weight: bold;
+
+}
+#errorCheckbox{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1px;
+}
+#checkboxLabel{
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 0 0;
+}
+
+
+#imgClickAndChange{
+  cursor: pointer;
+}
+
+

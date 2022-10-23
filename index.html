@@ -1,0 +1,81 @@
+<!--
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    AKAI Frontend Task - HTML
+
+	W tym pliku znajduje się struktura strony z formularzem. Twoim zadaniem jest upiększenie
+	tego formularza. Przeanalizuj poniższy kod. Jego znajomość będzie potrzebna do przerobienia
+	pliku form.css odpowiedzialnego za styl strony. Gdy zapoznasz się ze strukturą strony,
+	przejdź do pliku css/form.css lub js/validation.js po dalsze instrukcje.
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AKAI Frontend Task</title>
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body >
+
+
+
+
+
+
+	
+
+	<section   id="task-frontend" onClick="transform()">
+			<span class="basic-title">Dołącz do nas !</span>
+			<div id="img">
+				<img id="imgClickAndChange" onclick="changeImage()" src="akaiLOGO.png" alt="">
+				<!-- <img src="akaiLOGO2.png" alt=""> -->
+			</div>
+			<hr class="form-line" > <p class="subtitle"> Wypełnij formularz </p> </hr>
+	
+			
+			<form  id="form" method="POST" ">
+					
+				<label for="first-name">Imię</label>
+				<div class="error" id="errorName"	></div>
+				<input onfocusout="validateName()" type="text" id="first-name" />
+	
+				<label for="last-name">Nazwisko</label>
+				<div class="error" id="errorLastName"></div>
+				<input onfocusout="validateLastName()"  type="text" id="last-name"/>
+	
+				<label for="email">Email</label>
+				<div class="error" id="errorEmail"></div>
+				<input onfocusout="validateEmail()" type="email" id="email"/>
+	
+				<hr class="form-line" > </hr>
+				<label id="checkboxLabel">Sekcje, które Cię interesują</label>
+				<div class="error" id="errorCheckbox"></div>
+				<div class="checkbox-container" onchange="validateCheckbox()" 	>
+					<input type="checkbox" id="frontend-checkbox" name="section" value="frontend">
+					<label for="frontend-checkbox">Frontend	</label>
+
+					<input type="checkbox" id="backend-checkbox" name="section" value="frontend">
+					<label for="backend-checkbox">Backend</label>
+
+					<input type="checkbox" id="mobile-checkbox" name="section" value="frontend">
+					<label for="mobile-checkbox">Mobile</label>
+					
+
+					<input type="checkbox" id="graphics-checkbox" name="section" value="frontend">
+					<label for="graphics-checkbox">Grafika</label>
+				</div>
+				
+				<div class="button" id="inputDiv" ">
+					<button id="submit"  onMouseOver="validateCheckbox()"  type="submit" value="Prześlij"> Prześlij </button>
+				</div>
+
+			</form>
+	
+	</section>
+<script type="text/javascript" src="js/validation.js"></script>
+
+</body>
+</html>
